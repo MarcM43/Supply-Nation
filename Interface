@@ -1,0 +1,28 @@
+Interface
+
+Page 1 : 
+  -User inputs his/her zip code. Must be 5 characters otherwise print 'Zip code must be 5 characters'. If zip code does not exist, print 'Sorry, zip code [     ] does not exist in our database.'
+  Else match proceed to page 2
+  
+Page 2
+  Fade out page 1 and print on screen 'Ah, [town name]'. ei. 'Ah Storrs'.
+  Fade out to page 3
+  
+Page 3
+  Print 'What business does your city/town need?' 
+  Box to type : ______________________    (Autocomplete + Automatch {ei. nail salon === pedicure}, 'other' option )
+  After option is chosen, box under that appears 'Is there another business you would suggest? If not SKIP' (skip goes to page 4)
+  Box to type : ______________________    (Autocomplete + Automatch)
+  After second option is chose, print 'Finally a 3rd option? If not SKIP' (skip goes to page 4)
+  Box to type : ______________________    (Autocomplete + Automatch)
+  
+ Page 4
+  Bar graph shows results of top 5 requested businesses in user's zip code, plus upto 3 of user chosen businesses if not included in top 5.
+  Each bar shows ratio of # of  user chosen options 1st (red) 2nd (green) and 3rd (blue) 
+  Page dissapears after 120 seconds after fades to page 5
+ 
+ Page 5
+  Print "Thank you for input!"
+  
+  Note: Only one input per IP address
+ 
