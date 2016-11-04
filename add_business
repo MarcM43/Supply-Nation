@@ -1,0 +1,41 @@
+<?php
+	require("config.php");
+	if(isset($_REQUEST['business1'])&&strlen($_REQUEST['business1'])>0){
+		$sql="select * from business_city,business,city where business.business_name like '".$_REQUEST['business1']."' and city.zip = '".$_SESSION['zip']."' and business.id=business_city.business_id and city.id=business_city.city_id";
+		$result = mysqli_query($conn,$sql) or die(mysqli_error());
+		if(mysqli_num_rows($result)>0){
+			$sql="update business_city,business,city set business_city.users=business_city.users+1 where business.business_name like '".$_REQUEST['business1']."' and city.zip = '".$_SESSION['zip']."' and business.id=business_city.business_id and city.id=business_city.city_id";
+			$result = mysqli_query($conn,$sql) or die(mysqli_error());
+		}
+		else{
+			$sql="insert into business_city(business_id,city_id) select business.id,city.id from business,city where business.business_name like '".$_REQUEST['business1']."' and city.zip = '".$_SESSION['zip']."'";
+			$result = mysqli_query($conn,$sql) or die(mysqli_error());
+		}
+	}
+	if(isset($_REQUEST['business2'])&&strlen($_REQUEST['business2'])>0){
+		$sql="select * from business_city,business,city where business.business_name like '".$_REQUEST['business2']."' and city.zip = '".$_SESSION['zip']."' and business.id=business_city.business_id and city.id=business_city.city_id";
+		$result = mysqli_query($conn,$sql) or die(mysqli_error());
+		if(mysqli_num_rows($result)>0){
+			$sql="update business_city,business,city set business_city.users=business_city.users+1 where business.business_name like '".$_REQUEST['business2']."' and city.zip = '".$_SESSION['zip']."' and business.id=business_city.business_id and city.id=business_city.city_id";
+			$result = mysqli_query($conn,$sql) or die(mysqli_error());
+		}
+		else{
+			$sql="insert into business_city(business_id,city_id) select business.id,city.id from business,city where business.business_name like '".$_REQUEST['business2']."' and city.zip = '".$_SESSION['zip']."'";
+			$result = mysqli_query($conn,$sql) or die(mysqli_error());
+		}
+	}
+	if(isset($_REQUEST['business3'])&&strlen($_REQUEST['business3'])>0){
+		$sql="select * from business_city,business,city where business.business_name like '".$_REQUEST['business3']."' and city.zip = '".$_SESSION['zip']."' and business.id=business_city.business_id and city.id=business_city.city_id";
+		$result = mysqli_query($conn,$sql) or die(mysqli_error());
+		if(mysqli_num_rows($result)>0){
+			$sql="update business_city,business,city set business_city.users=business_city.users+1 where business.business_name like '".$_REQUEST['business3']."' and city.zip = '".$_SESSION['zip']."' and business.id=business_city.business_id and city.id=business_city.city_id";
+			$result = mysqli_query($conn,$sql) or die(mysqli_error());
+		}
+		else{
+			$sql="insert into business_city(business_id,city_id) select business.id,city.id from business,city where business.business_name like '".$_REQUEST['business3']."' and city.zip = '".$_SESSION['zip']."'";
+			$result = mysqli_query($conn,$sql) or die(mysqli_error());
+		}
+	}
+	header('Content-Type: application/json');
+	echo json_encode("");
+?>
